@@ -6,7 +6,6 @@ import { addTransaction, deleteTransaction, editTransaction, getTransaction } fr
 // async thunks 
 export const getAllTransactions = createAsyncThunk('transaction/getAllTransactions', async () => {
     const data = await getTransaction()
-    console.log('from getTransction', data)
     return data
 })
 export const postTransaction = createAsyncThunk('transaction/postTransaction', async (data) => {
@@ -25,14 +24,24 @@ export const removeTransaction = createAsyncThunk('transaction/deleteTransaction
 const initialState = {
     isLoading: false,
     error: '',
-    transactions: []
+    transactions: [],
+    editing: {}
 }
 
-const transactionSlice =createSlice ({
+const transactionSlice = createSlice({
 
     name: 'transaction',
     initialState,
-    extraReducers:(builder) => {
+    reducers: {
+        isActive: (state, action) => {
+            state.editing = action.payload
+        },
+        isInActive: (state, action) => {
+            state.editing = {}
+        }
+
+    },
+    extraReducers: (builder) => {
 
         builder
             .addCase(getAllTransactions.pending, (state, action) => {
@@ -97,7 +106,5 @@ const transactionSlice =createSlice ({
 )
 
 const { reducer } = transactionSlice
-
+export const { isActive, isInActive } = transactionSlice.actions
 export default reducer
-
-

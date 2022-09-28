@@ -9,18 +9,8 @@ const store = configureStore(
         },
     },
 
-    /* combineReducers({
-        transaction: transactionReducer,
-    }) */
 );
 
-/* 
-const store=configureStore({
-    reducer:{
-        transactions:transactionReducer
-    }
-})
- */
 export default store
 
 

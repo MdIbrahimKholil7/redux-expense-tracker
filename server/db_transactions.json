@@ -1,16 +1,16 @@
 {
   "transactions": [
     {
-      "id": 1,
-      "name": "Salary from Google",
+      "name": "Salary from facebook",
+      "amount": "5000000",
       "type": "income",
-      "amount": 1000000
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Family Expenses",
+      "name": "Family",
+      "amount": "100000",
       "type": "expense",
-      "amount": 200000
+      "id": 2
     },
     {
       "name": "Md Ibrahim Kholil",
@@ -29,6 +29,12 @@
       "amount": 300000,
       "type": "income",
       "id": 5
+    },
+    {
+      "name": "From facebook",
+      "amount": 432432,
+      "type": "expense",
+      "id": 6
     }
   ]
 }
