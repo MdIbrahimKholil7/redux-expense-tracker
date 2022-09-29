@@ -6,6 +6,12 @@ export const getTransaction = async () => {
     return data
 }
 
+export const getTransactions = async () => {
+    const { data } = await Fetcher.get('/transactions')
+ 
+    return data
+}
+
 export const addTransaction = async (postData) => {
     const { data } = await Fetcher.post('/transactions', postData)
     return data

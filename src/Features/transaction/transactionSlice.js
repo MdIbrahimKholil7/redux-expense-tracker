@@ -1,12 +1,15 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import { addTransaction, deleteTransaction, editTransaction, getTransaction } from "../api/transactionApi"
+import { addTransaction, deleteTransaction, editTransaction, getTransaction, getTransactions } from "../api/transactionApi"
 
 
 
 // async thunks 
 export const getAllTransactions = createAsyncThunk('transaction/getAllTransactions', async () => {
     const data = await getTransaction()
-   
+    return data
+})
+export const getAllTransaction = createAsyncThunk('transaction/getAllTransaction', async () => {
+    const data = await getTransactions()
     return data
 })
 export const postTransaction = createAsyncThunk('transaction/postTransaction', async (data) => {
@@ -59,6 +62,20 @@ const transactionSlice = createSlice({
                 state.error = action.error.message
                 state.transactions = []
             })
+            .addCase(getAllTransaction.pending, (state, action) => {
+                state.isLoading = true
+                state.error = ''
+            })
+            .addCase(getAllTransaction.fulfilled, (state, action) => {
+                state.isLoading = false
+                state.error = ''
+                state.transactions = action.payload
+            })
+            .addCase(getAllTransaction.rejected, (state, action) => {
+                state.isLoading = false
+                state.error = action.error.message
+                state.transactions = []
+            })
             .addCase(postTransaction.pending, (state, action) => {
                 state.isLoading = true
                 state.error = ''
@@ -67,7 +84,6 @@ const transactionSlice = createSlice({
                 state.isLoading = false
                 state.error = ''
                 state.transactions.push(action.payload)
-                console.log(state.transactions.unshift(action.payload))
             })
             .addCase(postTransaction.rejected, (state, action) => {
                 state.isLoading = false

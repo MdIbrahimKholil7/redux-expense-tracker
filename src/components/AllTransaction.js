@@ -1,9 +1,17 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllTransaction } from '../Features/transaction/transactionSlice';
+import Transaction from './Transactions/Transaction';
 import Transactions from './Transactions/Transactions';
 
 const AllTransaction = () => {
-    const {Transactions}=useSelector(state=>state)
+    const { transactions } = useSelector(state => state.transaction)
+    console.log(transactions)
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(getAllTransaction())
+    }, [])
+    // console.log(Transaction)
     return (
         <div className='parent-transaction'>
             <div className='search-box'>
@@ -36,11 +44,28 @@ const AllTransaction = () => {
             </div>
             <div>
                 <h2 style={{
-                    textAlign:'center',
-                    margin:'30px'
+                    textAlign: 'center',
+                    margin: '70px'
                 }}>All Transaction</h2>
-                <div>
-                    
+                <div
+                    style={{
+                        width: '500px',
+                        margin: 'auto'
+                    }}
+                >
+                    <div
+                     style={{
+                        
+                        marginBottom: '60px'
+                    }}
+                    >
+                        {
+                            transactions.map(transaction => <Transaction
+                                key={transaction.id}
+                                transaction={transaction}
+                            />)
+                        }
+                    </div>
                 </div>
             </div>
         </div>
