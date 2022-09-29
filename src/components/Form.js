@@ -75,6 +75,7 @@ export default function Form() {
                         name="name"
                         placeholder="My Salary"
                         value={name}
+                        required
                         onChange={e => setName(e.target.value)}
                     />
                 </div>
@@ -86,6 +87,7 @@ export default function Form() {
                             type="radio"
                             value="income"
                             name="income"
+                           
                             checked={type === 'income'}
                             onChange={e => setType('income')}
                         />
@@ -99,6 +101,7 @@ export default function Form() {
                             placeholder="Expense"
                             checked={type === 'expense'}
                             onChange={e => setType('expense')}
+                           
                         />
                         <label>Expense</label>
                     </div>
@@ -112,6 +115,7 @@ export default function Form() {
                         name="amount"
                         value={amount}
                         onChange={e => setAmount(e.target.value)}
+                        required
                     />
                 </div>
 

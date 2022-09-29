@@ -6,6 +6,7 @@ import { addTransaction, deleteTransaction, editTransaction, getTransaction } fr
 // async thunks 
 export const getAllTransactions = createAsyncThunk('transaction/getAllTransactions', async () => {
     const data = await getTransaction()
+    console.log(data)
     return data
 })
 export const postTransaction = createAsyncThunk('transaction/postTransaction', async (data) => {
@@ -65,7 +66,7 @@ const transactionSlice = createSlice({
             .addCase(postTransaction.fulfilled, (state, action) => {
                 state.isLoading = false
                 state.error = ''
-                state.transactions.push(action.payload)
+                state.transactions.unshift(action.payload)
             })
             .addCase(postTransaction.rejected, (state, action) => {
                 state.isLoading = false

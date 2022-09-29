@@ -12,7 +12,7 @@ export default function Transactions() {
         content=<p>{error}</p>
     }
     if (transactions.length) {
-        content = transactions.map(transaction => <Transaction
+        content = transactions.slice(0,5).map(transaction => <Transaction
             key={transaction.id}
             transaction={transaction}
         />)

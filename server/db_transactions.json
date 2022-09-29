@@ -11,6 +11,30 @@
       "amount": 20000,
       "type": "expense",
       "id": 2
+    },
+    {
+      "name": "Google",
+      "amount": 1000000,
+      "type": "income",
+      "id": 3
+    },
+    {
+      "name": "Tesla",
+      "amount": 1000000,
+      "type": "income",
+      "id": 5
+    },
+    {
+      "name": "khan",
+      "amount": 4324,
+      "type": "expense",
+      "id": 6
+    },
+    {
+      "name": "roman reigns",
+      "amount": 100000,
+      "type": "income",
+      "id": 7
     }
   ]
 }

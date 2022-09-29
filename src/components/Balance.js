@@ -6,14 +6,14 @@ export default function Balance() {
     const calculateIncome=(transaction)=>{
         let income=0
         transaction?.transactions?.forEach(elem=>{
-            console.log(elem)
+           
             if(elem.type==='income'){
                 income+=+elem.amount
             }else{
                 income-=+elem.amount
             }
         })
-        console.log(income)
+      
         return income
     }
 
