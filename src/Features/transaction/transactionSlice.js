@@ -66,7 +66,8 @@ const transactionSlice = createSlice({
             .addCase(postTransaction.fulfilled, (state, action) => {
                 state.isLoading = false
                 state.error = ''
-                state.transactions.unshift(action.payload)
+                state.transactions.push(action.payload)
+                console.log(state.transactions.unshift(action.payload))
             })
             .addCase(postTransaction.rejected, (state, action) => {
                 state.isLoading = false

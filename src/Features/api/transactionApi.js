@@ -2,9 +2,8 @@ import Fetcher from "../../components/utils/Fetcher"
 
 export const getTransaction = async () => {
     const { data } = await Fetcher.get('/transactions')
-    const result=data.reverse()
-    
-    return result.slice(0,5)
+ 
+    return data
 }
 
 export const addTransaction = async (postData) => {

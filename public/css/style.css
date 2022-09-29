@@ -239,3 +239,18 @@ label {
     margin-top: 20px;
     cursor: pointer;
 }
+.search-box{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.parent-radio{
+    display: flex;
+    gap:30px;
+    justify-content: space-between;
+
+}
+.parent-transaction{
+padding:20px 10px;
+}
+
