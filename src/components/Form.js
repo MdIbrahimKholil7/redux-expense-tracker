@@ -9,7 +9,7 @@ export default function Form() {
     const [type, setType] = useState('income')
     const state = useSelector(state => state)
     const { editing } = useSelector(state => state.transaction)
-    console.log(editing)
+    
     const [editMode, setEditMode] = useState(false)
     const dispatch = useDispatch()
 
