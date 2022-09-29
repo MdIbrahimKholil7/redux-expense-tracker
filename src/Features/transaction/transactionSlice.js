@@ -6,7 +6,7 @@ import { addTransaction, deleteTransaction, editTransaction, getTransaction } fr
 // async thunks 
 export const getAllTransactions = createAsyncThunk('transaction/getAllTransactions', async () => {
     const data = await getTransaction()
-    console.log(data)
+   
     return data
 })
 export const postTransaction = createAsyncThunk('transaction/postTransaction', async (data) => {

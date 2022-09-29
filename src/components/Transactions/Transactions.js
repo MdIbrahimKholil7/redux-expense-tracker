@@ -20,7 +20,7 @@ export default function Transactions() {
     if(transactions.length===0){
         content=<p>There is no content</p>
     }
-    
+  
     return (
         <>
             <p className="second_heading">Your Transactions:</p>
@@ -31,6 +31,9 @@ export default function Transactions() {
                         content
                     }
                 </ul>
+                <div className="btn-parent">
+                   {transactions.slice(0,5).length===5 && <button className="viewMore">View More</button>}
+                </div>
             </div>
         </>
     );

@@ -163,7 +163,7 @@ label {
 }
 
 .cancel_edit {
-    
+
     margin-top: 10px;
     background-color: #e6425e !important;
 }
@@ -183,6 +183,7 @@ label {
 }
 
 @media (max-width: 450px) {
+
     .top_card,
     .form {
         min-width: 90%;
@@ -219,4 +220,22 @@ label {
     * {
         font-size: 95% !important;
     }
+}
+
+.btn-parent {
+    text-align: center;
+}
+
+.viewMore {
+    text-align: center;
+    display: inline-block;
+    padding: 13px 21px;
+    border-radius: 8px;
+    background: #4338ca;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
 }

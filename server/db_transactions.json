@@ -25,16 +25,10 @@
       "id": 5
     },
     {
-      "name": "khan",
-      "amount": 4324,
-      "type": "expense",
-      "id": 6
-    },
-    {
       "name": "roman reigns",
-      "amount": 100000,
+      "amount": 4323,
       "type": "income",
-      "id": 7
+      "id": 6
     }
   ]
 }
